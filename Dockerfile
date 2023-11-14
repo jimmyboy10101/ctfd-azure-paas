@@ -15,4 +15,6 @@ RUN git clone https://github.com/apt-42/apt42_ctfd_themes.git /tmp/apt42_ctfd_th
     && cp -r /tmp/apt42_ctfd_themes/* /opt/CTFd/themes/apt42/ \
     && rm -rf /tmp/apt42_ctfd_themes
 
+RUN ls -R
+
 ENTRYPOINT ["/opt/CTFd/docker-entrypoint.sh"]
