@@ -12,8 +12,10 @@ RUN wget --progress=dot:giga https://cacerts.digicert.com/DigiCertGlobalRootG2.c
 RUN apt-get update && apt-get install -y git --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+    
+RUN git clone --recursive https://github.com/CTFd/themes.git /CTFd/themes
 
 USER 1001
-RUN git clone --recursive https://github.com/CTFd/themes.git /CTFd/themes
+
 EXPOSE 8000
 ENTRYPOINT ["/opt/CTFd/docker-entrypoint.sh"]
